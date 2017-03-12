@@ -1,0 +1,34 @@
+RHINDO -> Clóvis
+
+Perfil gerente RH 
+
+Perfil funcionário
+
+
+ATOA -> Matheus
+
+Perfil Gerente Dep
+
+Perfil Func
+
+
+
+Requisitos não funcionais -> Guilherme
+(Rhindo/Atoa)
+
+Ergolist
+
+- Feedback
+	quest 01 04 05* 08
+
+- Consisão
+	quest 01 02 03 04
+
+- Ações mínimas
+	quest 01 03 04 05
+	
+- Densidade Informacional
+	quest 02 03 04 06
+
+- Mensagens de Erro
+	quest 02 03 06 08
