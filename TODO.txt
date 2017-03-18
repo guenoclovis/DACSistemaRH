@@ -11,10 +11,31 @@ Perfil Gerente Dep
 
 Perfil Func
 
+FAZER AS TELAS:
 
 
+TELA LOGIN -> 
+	(4 telas: normal, logado com sucesso, nome invalido, senha invalida)
+
+TELA INICIAL GERENTE APÓS LOGIN ->
+	(abas com as ações que ele pode realizar (olhar na especificação do trabalho)
 Requisitos não funcionais -> Guilherme
 (Rhindo/Atoa)
+
+TELA MANTER FUNCIONARIOS ->
+	(exibe a lista dos funcionários possibilitando selecionar e visualizar as especificaçoes de cada funcionario(nome, cargo e setor), a tela também deve possuir um botão para cadastrar funcionarios) 
+
+TELA CADASTRO FUNCIONÁRIO ->
+	(2 TELAS: normal, com todos os campos sem preencher indicando o que não foi preeenchido )
+
+TELA CADASTRO CARGO ->
+	(2 tELAS: normal com os valores default preenchidos: salario, carga minima de trabalho por mes e % de desconto de impostos gerais)
+
+TELA CADASTRA DEPARTAMENTO ->
+	(1 TELA, VER NA ESPECIFICAÇÃO DO TRABALHO)
+
+
+
 
 Ergolist
 
@@ -43,7 +64,7 @@ Ergolist
 	tela de login (apenas nome e senha)***********
 	 
 	04 05 06
-	emitir relatorio do funcionario
+	tela cadastrar departamento
 
 - Mensagens de Erro
 	quest 02 03 06 08
