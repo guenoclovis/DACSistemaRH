@@ -1,6 +1,0 @@
-1 - Os sistemas sao integrados?
-2 - Uma atividade pode ter mais de um funcionario?
-3 - Tirar relacoes do modelo conceitual?
-4 - Prototipacao de telas tem que ser completa pra domingo?
-5 - Modelo estrela?
-6 - Tipo de atividade? O q eh?
