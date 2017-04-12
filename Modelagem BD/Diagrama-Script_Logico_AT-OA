@@ -1,0 +1,45 @@
+CREATE TABLE Departamento (
+  idDepartamento INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(idDepartamento)
+);
+
+CREATE TABLE Funcionario (
+  idFuncionario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  email VARCHAR(50) NULL,
+  senha VARCHAR(50) NULL,
+  PRIMARY KEY(idFuncionario)
+);
+
+CREATE TABLE AtividadeTipo (
+  idAtividadeTipo INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nomeTipo VARCHAR(50) NULL,
+  descricao VARCHAR(100) NULL,
+  PRIMARY KEY(idAtividadeTipo)
+);
+
+CREATE TABLE Atividade (
+  idAtividade INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  AtividadeTipo_idAtividadeTipo INTEGER UNSIGNED NOT NULL,
+  Departamento_idDepartamento INTEGER UNSIGNED NOT NULL,
+  Funcionario_idFuncionario INTEGER UNSIGNED NOT NULL,
+  inicio DATETIME NULL,
+  fim DATETIME NULL,
+  estadoAtual VARCHAR(20) NULL,
+  PRIMARY KEY(idAtividade),
+  INDEX Atividade_FKIndex1(Funcionario_idFuncionario),
+  INDEX Atividade_FKIndex2(Departamento_idDepartamento),
+  INDEX Atividade_FKIndex3(AtividadeTipo_idAtividadeTipo),
+  FOREIGN KEY(Funcionario_idFuncionario)
+    REFERENCES Funcionario(idFuncionario)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(Departamento_idDepartamento)
+    REFERENCES Departamento(idDepartamento)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(AtividadeTipo_idAtividadeTipo)
+    REFERENCES AtividadeTipo(idAtividadeTipo)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+

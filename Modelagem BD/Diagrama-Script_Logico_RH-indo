@@ -1,0 +1,82 @@
+CREATE TABLE UF (
+  idUF INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  sigla VARCHAR(2) NULL,
+  PRIMARY KEY(idUF)
+);
+
+CREATE TABLE Departamento (
+  idDepartamento INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nomeDepartamento VARCHAR(50) NULL,
+  localizacao VARCHAR(50) NULL,
+  PRIMARY KEY(idDepartamento)
+);
+
+CREATE TABLE Cargo (
+  idCargo INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nomeCargo VARCHAR(50) NULL,
+  salario FLOAT NULL,
+  requisitos VARCHAR(200) NULL,
+  cargaMinima INTEGER UNSIGNED NULL,
+  descontoImpostos FLOAT NULL,
+  PRIMARY KEY(idCargo)
+);
+
+CREATE TABLE Endereco (
+  idEndereco INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  UF_idUF INTEGER UNSIGNED NOT NULL,
+  rua VARCHAR(50) NULL,
+  numero INTEGER UNSIGNED NULL,
+  bairro VARCHAR(50) NULL,
+  cep VARCHAR(9) NULL,
+  cidade VARCHAR(50) NULL,
+  PRIMARY KEY(idEndereco),
+  INDEX Endereco_FKIndex1(UF_idUF),
+  FOREIGN KEY(UF_idUF)
+    REFERENCES UF(idUF)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+CREATE TABLE Funcionario (
+  idFuncionario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Endereco_idEndereco INTEGER UNSIGNED NOT NULL,
+  Cargo_idCargo INTEGER UNSIGNED NOT NULL,
+  Departamento_idDepartamento INTEGER UNSIGNED NOT NULL,
+  nomeFuncionario VARCHAR(50) NULL,
+  cpf VARCHAR(14) NULL,
+  rg VARCHAR(12) NULL,
+  celular VARCHAR(14) NULL,
+  email VARCHAR(50) NULL,
+  senha VARCHAR(50) NULL,
+  PRIMARY KEY(idFuncionario),
+  INDEX Funcionario_FKIndex1(Departamento_idDepartamento),
+  INDEX Funcionario_FKIndex2(Cargo_idCargo),
+  INDEX Funcionario_FKIndex3(Endereco_idEndereco),
+  FOREIGN KEY(Departamento_idDepartamento)
+    REFERENCES Departamento(idDepartamento)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(Cargo_idCargo)
+    REFERENCES Cargo(idCargo)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(Endereco_idEndereco)
+    REFERENCES Endereco(idEndereco)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+CREATE TABLE Folha (
+  idFolha INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Funcionario_idFuncionario INTEGER UNSIGNED NOT NULL,
+  horasTrabalhadas INTEGER UNSIGNED NULL,
+  mes INTEGER UNSIGNED NULL,
+  ano INTEGER UNSIGNED NULL,
+  PRIMARY KEY(idFolha),
+  INDEX Folha_FKIndex1(Funcionario_idFuncionario),
+  FOREIGN KEY(Funcionario_idFuncionario)
+    REFERENCES Funcionario(idFuncionario)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
