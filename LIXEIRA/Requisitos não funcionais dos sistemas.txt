@@ -1,4 +1,0 @@
-Requisitos não funcionais dos sistemas
-
-Os sistemas RH-INDO e AT-OA se comunicarão através Web Services do tipo REST. Em relação aos campos de formulários dos usuários, todos estarão no formato brasileiro, possuirão máscara (se necessário) e caso sejam do tipo data, a entrada será feita com calendário. As senhas dos usuários serão criptografadas e as validações serão feitas tanto no lado do cliente (JavaScript) quanto no do servidor (Java).
-O leiaute dos sistemas serão agradáveis, seguindo os preceitos de usabilidade e ergonomia do ErgoList. Além disso todos os relatórios serão gerados em PDF utilizando o JasperStudio e o banco de dados será elaborado de forma normalizada.
